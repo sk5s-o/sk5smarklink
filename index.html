@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sk5smarklink</title>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sk5s/fontawesome@5.15.4/css/all.css">
+</head>
+<body>
+  <div id="content">
+
+# Marked in browser
+
+Rendered by **marked**.
+
+![picture](https://marked.js.org/img/logo-black.svg)
+
+<i class="fab fa-instagram"></i>
+
+- 001
+- 002
+- 003
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.0/dist/purify.min.js"></script>
+  <script>
+    document.getElementById('content').innerHTML = DOMPurify.sanitize(
+      marked(document.getElementById('content').innerHTML),{
+        ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|xmpp|xxx):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i
+      }
+    )
+  </script>
+</body>
+</html>
