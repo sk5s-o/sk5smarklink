@@ -1,0 +1,19 @@
+{
+  "name": "sk5smarklink",
+  "version": "1.0.0",
+  "description": "use markdown to render a link button page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sk5s/sk5smarklink.git"
+  },
+  "author": "samko5sam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sk5s/sk5smarklink/issues"
+  },
+  "homepage": "https://github.com/sk5s/sk5smarklink#readme"
+}

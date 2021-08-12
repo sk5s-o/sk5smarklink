@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sk5smarklink</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sk5s/fontawesome@5.15.4/css/all.css">
+</head>
+<body>
+  <div id="content" class="container content">
+
+# sk5smarklink Simple
+
+---
+
+[button test](https://hcsc-25th.github.io/)
+[button 2](https://hcsc-25th.github.io/)
+
+---
+
+![picture](https://bulma.io/images/bulma-logo.png)
+
+<i class="fab fa-instagram" style="font-size: 1.5rem"></i>
+
+- 001
+- 002
+- 003
+
+* 1
+* 2
+** 2.1
+** 2.2
+
+## 不支援大於一層的清單 :sweat_smile: :mask:
+## 不支援markdown emoji？
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+  <script>
+
+const classMap = {
+  h1: 'mt-6',
+  a: 'button is-primary is-large is-fullwidth mt-3'
+}
+const bindings = Object.keys(classMap)
+  .map(key => ({
+    type: 'output',
+    regex: new RegExp(`<${key}(.*)>`, 'g'),
+    replace: `<${key} class="${classMap[key]}" $1>`
+  }));
+let converter = new showdown.Converter({
+  extensions: [...bindings]
+})
+document.getElementById('content').innerHTML = converter.makeHtml(document.getElementById('content').innerHTML)
+
+  </script>
+</body>
+</html>
